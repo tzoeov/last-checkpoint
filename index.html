@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Two Desks</title>
+<meta name="description" content="Two pixel-art inspection games. One border post in 1987, one AI outbox in San Francisco.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=VT323&display=swap">
+<style>
+/* Layout: two doors side by side, each in its own game's colours. */
+:root {
+  --bg: #1a1714;
+  --text: #efe6d4;
+  --dim: #b4a690;
+  --crt-bg: #0e1215;
+  --crt-text: #dccda2;
+  --crt-accent: #cf9a40;
+  --crt-red: #b8392e;
+  --paper: #efe5d4;
+  --ink: #1f1614;
+  --meat: #c23e52;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: var(--bg); color: var(--text); font-family: 'VT323', 'Courier New', monospace; font-size: 22px; line-height: 1.3; display: grid; place-items: center; padding-block: 32px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+main { width: min(100%, 980px); display: grid; gap: 28px; }
+h1 { margin: 0; font-family: 'Silkscreen', monospace; font-size: clamp(26px, 5vw, 40px); letter-spacing: .04em; text-wrap: balance; }
+.lede { margin: 6px 0 0; color: var(--dim); max-width: 46ch; }
+.doors { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px; }
+.door { display: grid; gap: 12px; padding: 22px; text-decoration: none; border: 3px solid; min-width: 0; transition: transform .15s ease; }
+.door:hover, .door:focus-visible { transform: translate(-3px, -3px); }
+.door:focus-visible { outline: 3px solid var(--text); outline-offset: 4px; }
+.door .kicker { font-family: 'Silkscreen', monospace; font-size: 12px; letter-spacing: .14em; }
+.door h2 { margin: 0; font-family: 'Silkscreen', monospace; font-size: clamp(24px, 4vw, 32px); line-height: 1; }
+.door p { margin: 0; }
+.door .go { font-family: 'Silkscreen', monospace; font-size: 13px; letter-spacing: .1em; justify-self: start; padding: 8px 14px; border: 2px solid currentColor; }
+.checkpoint { background: var(--crt-bg); color: var(--crt-text); border-color: var(--crt-accent); box-shadow: 6px 6px 0 var(--crt-red); }
+.checkpoint .kicker { color: var(--crt-accent); }
+.checkpoint h2 .star { color: var(--crt-red); }
+.outbox { background: var(--paper); color: var(--ink); border-color: var(--ink); box-shadow: 6px 6px 0 var(--meat); }
+.outbox .kicker { color: var(--meat); }
+.outbox .go { background: var(--meat); color: #fff8f2; border-color: var(--meat); }
+footer { color: var(--dim); font-size: 18px; }
+@media (prefers-reduced-motion: reduce) { .door { transition: none; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Two desks. One stamp.</h1>
+    <p class="lede">Two pixel-art inspection games about reading what other people won’t. Best with sound on. Both work on phones.</p>
+  </header>
+  <div class="doors">
+    <a class="door checkpoint" href="checkpoint/">
+      <span class="kicker">PORT SAN AURELIO · 1987</span>
+      <h2>The Last <span class="star">★</span> Checkpoint</h2>
+      <p>A border officer in a Mediterranean socialist republic. Smugglers, spies, forged passports, and a government with something to hide.</p>
+      <span class="go">Report for duty</span>
+    </a>
+    <a class="door outbox" href="outbox/">
+      <span class="kicker">DOGPATCH, SAN FRANCISCO · NOW</span>
+      <h2>The Outbox</h2>
+      <p>A meat company let its AI write everything. You’re the last human who reads it before it goes out. A Meat Proxies game.</p>
+      <span class="go">Start Monday</span>
+    </a>
+  </div>
+  <footer>Progress saves in your browser.</footer>
+</main>
+</body>
+</html>
